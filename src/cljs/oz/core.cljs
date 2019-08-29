@@ -1,11 +1,6 @@
 (ns ^:figwheel-always oz.core
   (:require [reagent.core :as r]
             [clojure.string :as str]
-            [cljs.core.async :as async  :refer (<! >! put! chan)]
-            [taoensso.encore :as encore :refer-macros (have have?)]
-            [taoensso.timbre :as log :refer-macros (tracef debugf infof warnf errorf)]
-            [taoensso.sente :as sente :refer (cb-success?)]
-            [taoensso.sente.packers.transit :as sente-transit]
             [cljsjs.vega]
             [cljsjs.vega-lite]
             [cljsjs.vega-embed]
@@ -13,7 +8,6 @@
   (:require-macros
    [cljs.core.async.macros :as asyncm :refer (go go-loop)]))
 
-(log/set-level! :info)
 (enable-console-print!)
 
 (defn- ^:no-doc log [a-thing]
